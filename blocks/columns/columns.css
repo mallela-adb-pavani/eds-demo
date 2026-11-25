@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .columns img {
@@ -9,19 +10,116 @@
 
 .columns > div > div {
   order: 1;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgb(40 44 63 / 5%);
+}
+
+.columns > div > div h3 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.columns > div > div p {
+  color: var(--muted-text-color);
+  margin-bottom: 0;
 }
 
 .columns > div > .columns-img-col {
   order: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .columns > div > .columns-img-col img {
   display: block;
 }
 
+.columns.promo > div {
+  background: linear-gradient(90deg, #fff2df 0%, #fff8ef 50%, #fff2df 100%);
+  border-radius: 12px;
+  border: 1px solid #f3e2c7;
+  align-items: center;
+}
+
+.columns.banner > div {
+  background: #f5f5f6;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 0;
+  align-items: stretch;
+}
+
+.columns.promo > div > div {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 16px 20px;
+  align-self: center;
+}
+
+.columns.banner > div > div {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f5f5f6;
+}
+
+.columns.banner > div > .columns-img-col {
+  padding: 0;
+  background: #fff;
+}
+
+.columns.banner > div > .columns-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 280px;
+}
+
+.columns.promo h2,
+.columns.promo h3,
+.columns.promo p {
+  margin: 0;
+}
+
+.columns.banner h1,
+.columns.banner h2 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #282c3f;
+}
+
+.columns.banner p {
+  font-size: var(--body-font-size-m);
+  color: #535766;
+}
+
+.columns.promo > div > div:nth-child(2) {
+  text-align: center;
+}
+
+.columns.promo > div > div:nth-child(2) strong,
+.columns.promo > div > div:nth-child(2) code {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px dashed #b58b2a;
+  border-radius: 6px;
+  background: #fff;
+  color: #282c3f;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.04em;
+}
+
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
+    align-items: stretch;
     flex-direction: unset;
     gap: 24px;
   }
@@ -29,5 +127,10 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns.promo > div,
+  .columns.banner > div {
+    gap: 0;
   }
 }

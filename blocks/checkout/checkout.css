@@ -1,0 +1,89 @@
+﻿.checkout-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.checkout-form,
+.checkout-summary {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+}
+
+.checkout-form h2,
+.checkout-summary h2 {
+  margin-top: 0;
+  text-align: left;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 16px;
+}
+
+.checkout-form label,
+.checkout-form legend {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.checkout-form input[type='text'],
+.checkout-form input[type='tel'],
+.checkout-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.checkout-form fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.checkout-form fieldset label {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.checkout-summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.checkout-summary ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted-text-color);
+}
+
+.checkout-total {
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  font-weight: 700;
+}
+
+.checkout-message {
+  margin: 0;
+  color: #03a685;
+  font-weight: 600;
+}
+
+@media (width >= 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+  }
+}
