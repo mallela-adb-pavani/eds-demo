@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "title": "Nike Dri-FIT Running T-Shirt",
+      "description": "Men's activewear t-shirt",
+      "path": "/nike-tshirt"
+    },
+    {
+      "title": "Levi's Slim Fit Jeans",
+      "description": "Premium denim collection",
+      "path": "/men"
+    },
+    {
+      "title": "Puma Street Sneakers",
+      "description": "Comfortable casual sneakers",
+      "path": "/men"
+    },
+    {
+      "title": "Floral Summer Dress",
+      "description": "Women's fashion collection",
+      "path": "/women"
+    },
+    {
+      "title": "Ethnic Kurta Set",
+      "description": "Women's ethnic wear",
+      "path": "/women"
+    }
+  ]
+}

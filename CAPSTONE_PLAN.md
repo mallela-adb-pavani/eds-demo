@@ -46,44 +46,47 @@ This document provides a 2-day, capstone-ready plan with **page-by-page DA conte
 
 ## 2. Navigation structure (`/nav` fragment)
 
-**Purpose:** shared header (brand, primary nav, tools). `header` block loads `/nav` and maps first 3 sections to brand/sections/tools.
+**Purpose:** shared header (brand, primary nav, tools). `header` block loads `/nav` and maps the first 3 sections to `nav-brand`, `nav-sections`, and `nav-tools`.
 
 | Area | Items | EDS/DA structure |
 | --- | --- | --- |
-| Brand | FashionHub (home link) | Section 1: bold/link text |
-| Primary nav | Home, Men, Women, Kids, Beauty | Section 2: bulleted link list |
-| Tools | Search, Bag/Cart, Checkout | Section 3: links (first can act as search pill via CSS) |
+| Brand | FASHIONHUB (home link) | Section 1: plain text/link |
+| Primary nav | MEN, WOMEN, KIDS, BEAUTY, NEW ARRIVALS | Section 2: bulleted link list |
+| Tools | Search Products, Profile, Wishlist, Bag | Section 3: bulleted link list; first item becomes search-style area |
 
 ### DA content: `/nav`
 ```md
-**[FashionHub](/)**
+**[FASHIONHUB](/)**
 
 ---
 
-- [Home](/)
-- [Men](/men)
-- [Women](/women)
-- [Kids](/kids)
-- [Beauty](/beauty)
+- [MEN](/men)
+- [WOMEN](/women)
+- [KIDS](/kids)
+- [BEAUTY](/beauty)
+- [NEW ARRIVALS](/new-arrivals)
 
 ---
 
-[Search for products, brands and more](/search)
-[Bag](/cart) [Checkout](/checkout)
+- [Search Products](/search)
+- [Profile](/profile)
+- [Wishlist](/wishlist)
+- [Bag](/cart)
 ```
 
-**Authoring notes:** Keep 3 sections in order. On mobile, header JS provides hamburger behavior; on desktop, sections render inline.
+**Authoring notes:** Keep exactly 3 sections in order. The first Tools item renders as the search-style pill via [blocks/header/header.css](C:/Users/mallela.pavani/EDS/eds-demo/blocks/header/header.css). On mobile, [blocks/header/header.js](C:/Users/mallela.pavani/EDS/eds-demo/blocks/header/header.js) provides hamburger behavior.
 
 ---
 
 ## 3. Footer structure (`/footer` fragment)
 
-**Purpose:** shared site footer with company/legal links and brand note.
+**Purpose:** shared site footer with brand, shop links, customer care, and legal links.
 
 | Column | Content |
 | --- | --- |
 | Brand | FashionHub value proposition |
-| Company | About Us, Contact |
+| Shop | Men, Women, Kids, Beauty, New Arrivals |
+| Customer Care | Contact Us, Track Orders, Returns, Support |
 | Legal | Privacy Policy, Terms & Conditions |
 | Bottom | Copyright |
 
@@ -91,8 +94,9 @@ This document provides a 2-day, capstone-ready plan with **page-by-page DA conte
 ```md
 | Columns |
 | --- |
-| **FashionHub**<br>Your one-stop destination for trend-forward fashion, beauty, and everyday essentials. | **Company**<br>[About Us](/about-us)<br>[Contact](/contact)<br>[Men](/men)<br>[Women](/women) | **Legal**<br>[Privacy Policy](/privacy-policy)<br>[Terms & Conditions](/terms-and-conditions) |
-| © 2026 FashionHub. All rights reserved. |  |  |
+| **FASHIONHUB**<br>Your destination for trend-led fashion,<br>beauty and lifestyle. | **SHOP**<br>[Men](/men)<br>[Women](/women)<br>[Kids](/kids)<br>[Beauty](/beauty)<br>[New Arrivals](/new-arrivals) | **CUSTOMER CARE**<br>[Contact Us](/contact)<br>[Track Orders](/track-orders)<br>[Returns](/returns)<br>[Support](/support) | **LEGAL**<br>[Privacy Policy](/privacy-policy)<br>[Terms & Conditions](/terms-and-conditions) |
+
+© 2026 FashionHub. All Rights Reserved.
 ```
 
 ---
@@ -252,7 +256,7 @@ Fresh edits for work, weekends, and everything in between.
 
 | Section | Block(s) | Content intent |
 | --- | --- | --- |
-| Product detail | `PDP` (custom) | Image, name, description, price, sizes, Add to Bag |
+| Product detail | `PDP` (custom) | Multi-image gallery, product details, pricing, sizes, Add to Bag, Wishlist |
 | Trust/benefits | `Columns` | Delivery/returns/payment reassurance |
 | Related CTA | `Cards` or links | Continue shopping |
 
@@ -260,7 +264,7 @@ Fresh edits for work, weekends, and everything in between.
 ```md
 | PDP |
 | --- |
-| ![Nike Dri-FIT Running T-Shirt](https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80) | ## Nike Dri-FIT Running T-Shirt<br><br>**₹1,299**<br><br>Stay cool through every run with sweat-wicking Dri-FIT fabric, a relaxed athletic fit, and soft-touch comfort designed for all-day wear.<br><br>Sizes: S, M, L, XL |
+| ![Nike Dri-FIT Running T-Shirt front](https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80)<br>![Nike Dri-FIT Running T-Shirt detail](https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80)<br>![Nike Dri-FIT Running T-Shirt back](https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80)<br>![Nike Dri-FIT Running T-Shirt lifestyle](https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1200&q=80) | ## Nike Dri-FIT Running T-Shirt<br><br>**₹1,299** MRP ₹1,999 (35% OFF)<br><br>4.4 ★ | 36.9k Ratings<br><br>Stay cool through every run with sweat-wicking Dri-FIT fabric, a relaxed athletic fit, and soft-touch comfort designed for all-day wear.<br><br>Sizes: S, M, L, XL |
 
 ---
 
@@ -280,7 +284,7 @@ Fresh edits for work, weekends, and everything in between.
 | ![Cart](https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=80)<br><br>### [Go to Bag](/cart)<br>Review items and checkout. |
 ```
 
-**PDP block behavior:** parses image/name/price/description/sizes, renders size selector and **Add to Bag**, stores item in `localStorage` key `fashionhub-cart`, and shows “Go to Cart” link.
+**PDP block behavior:** collects all authored images for the gallery, parses product name/price/description/ratings/sizes, renders a size guide, and provides **Add to Bag** and **Wishlist** controls. Add to Bag stores the selected size in `localStorage` key `fashionhub-cart` and shows a “Go to Cart” link. Add two to four images to the first PDP cell to populate the gallery; the block still lays out a single image correctly.
 
 ---
 

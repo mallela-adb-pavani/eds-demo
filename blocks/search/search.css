@@ -1,0 +1,39 @@
+
+.fashion-search {
+  max-width: 700px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.fashion-search input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f5f5f6;
+  font-size: 16px;
+}
+
+#fashion-search-results {
+  margin-top: 10px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+.search-result {
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #282c3f;
+}
+
+.search-result:hover {
+  background: #fff4f7;
+}
+
+.search-result strong {
+  color: #ff3f6c;
+}

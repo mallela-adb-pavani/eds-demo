@@ -13,25 +13,32 @@ Create/update:
 
 ## 1) `/nav` (Header Navigation)
 
-Create `/nav` with **three sections** in order (separate with section breaks in DA):
+Create `/nav` with **three sections** in order (separate with section breaks in DA).
 
-**Section 1 (Brand):**  
-**[FashionHub](/)**
+### Section 1 (Brand)
 
-**Section 2 (Navigation list):**
-- [Men](/men)
-- [Women](/women)
-- [Kids](/kids)
-- [Home](/)
-- [Beauty](/beauty)
-- [Genz](/genz)
-- [Studio](/studio)
+**[FASHIONHUB](/)**
 
-**Section 3 (Tools):**  
-[Search for products, brands and more](/search)  
-[Profile](/profile) [Wishlist](/wishlist) [Bag](/cart)
+---
 
-> Tip: In DA, place the search link first in Tools so it renders as the search bar (styled by [blocks/header/header.css](C:/Users/mallela.pavani/EDS/eds-demo/blocks/header/header.css)); keep Profile/Wishlist/Bag as additional links.
+### Section 2 (Navigation)
+
+- [MEN](/men)
+- [WOMEN](/women)
+- [KIDS](/kids)
+- [BEAUTY](/beauty)
+- [NEW ARRIVALS](/new-arrivals)
+
+---
+
+### Section 3 (Tools)
+
+- [Search Products](/search)
+- [Profile](/profile)
+- [Wishlist](/wishlist)
+- [Bag](/cart)
+
+> The first item in Tools becomes the search-style area via [blocks/header/header.css](C:/Users/mallela.pavani/EDS/eds-demo/blocks/header/header.css). Keep Search Products first.
 
 ---
 
@@ -121,14 +128,9 @@ Create a `/footer` document in DA.
 
 | Columns |
 | --- |
-| **FashionHub**<br>Your destination for trend-led fashion, beauty, and everyday style. | **Company**<br>[About Us](/about-us)<br>[Contact](/contact) | **Legal**<br>[Privacy Policy](/privacy-policy)<br>[Terms & Conditions](/terms-and-conditions) |
-| © 2026 FashionHub. All rights reserved. |  |  |
+| **FASHIONHUB**<br>Your destination for trend-led fashion,<br>beauty and lifestyle. | **SHOP**<br>[Men](/men)<br>[Women](/women)<br>[Kids](/kids)<br>[Beauty](/beauty)<br>[New Arrivals](/new-arrivals) | **CUSTOMER CARE**<br>[Contact Us](/contact)<br>[Track Orders](/track-orders)<br>[Returns](/returns)<br>[Support](/support) | **LEGAL**<br>[Privacy Policy](/privacy-policy)<br>[Terms & Conditions](/terms-and-conditions) |
 
-**Alternative (simple):**
-- [About Us](/about-us)
-- [Contact](/contact)
-- [Privacy Policy](/privacy-policy)
-- [Terms & Conditions](/terms-and-conditions)
+© 2026 FashionHub. All Rights Reserved.
 
 ---
 
